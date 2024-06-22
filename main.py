@@ -1,19 +1,27 @@
 from ast import Pass
 import os
 from pathlib import Path
-from collections import list
+from collections import UserList
+import shutil
 
 def get_current_working_directory() -> Path:
            return Path.cwd()
 
-def get_file_names() -> list[str]:
+def get_file_names():
            return os.listdir(pwd)
 
-def put_in_img_dir():
+def put_in_img_dir(file):
            Pass
 
-def put_in_doc_dir():
-           Pass
+def put_in_doc_dir(file):
+           pwd = get_current_working_directory()
+           docFilePath = pwd / 'S-Docs'
+
+           if not os.path.exists(docFilePath):
+                      os.mkdir('S-Docs')
+
+           shutil.move(str(pwd / file), str(docFilePath))
+                      
 
 if __name__ == '__main__':
            pwd = get_current_working_directory()
@@ -23,12 +31,12 @@ if __name__ == '__main__':
                       path = pwd / file
 
                       if os.path.isdir(path):
-                                 continue                      
+                                 continue                 
 
                       if '.png' in file:
-                                put_in_img_dir()
+                                put_in_img_dir(file)
                       elif file.endswith('.pdf'):
-                                 put_in_doc_dir()
+                                 put_in_doc_dir(file)
                       elif file.endswith('.txt'):
-                                 put_in_doc_dir()
+                                 put_in_doc_dir(file)
  
