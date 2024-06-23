@@ -4,7 +4,7 @@ This Python script helps you organize files on your desktop by sorting them into
 
 ### Features
 
-* Moves images (JPG, PNG, GIF) to an "S-Images" folder.
+* Moves images (JPG, PNG) to an "S-Images" folder.
 * Moves PDFs to an "S-Docs" folder.
 * Moves TXT files to an "S-Docs" folder.
 
@@ -17,14 +17,14 @@ This Python script helps you organize files on your desktop by sorting them into
   - If you don't have Python, download and install it from the official website: https://www.python.org/downloads/
 
 2. **Download the Script:**
-  - Download the script file (`main.py`) from wherever you have it saved.
+  - Download the script file (`main.py`).
 
 3. **Run the Script:**
-   - Open a terminal window and navigate to the directory where you saved the script (`main.py`).
+   - Open a terminal window and navigate to the directory where you want to arrange the files.
    - Run the script using the following command:
 
      ```bash
-     python main.py
+     python /path/to/main.py
      ```
 
 **Important Note:** This script modifies your file system. It's recommended to back up your desktop files before running the script for the first time.
