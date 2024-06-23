@@ -2,6 +2,7 @@ from ast import Pass
 import os
 from pathlib import Path
 import shutil
+from xxlimited import foo
 
 def get_current_working_directory() -> Path:
            return Path.cwd()
@@ -13,19 +14,26 @@ def put_in_img_dir(file):
            pwd = get_current_working_directory()
            docFilePath = pwd / 'S-Images'
 
-           if not os.path.exists(docFilePath):
-                      os.mkdir('S-Images')
+           try:
+                      if not os.path.exists(docFilePath):
+                                 os.mkdir('S-Images')
 
-           shutil.move(str(pwd / file), str(docFilePath))
+                      shutil.move(str(pwd / file), str(docFilePath))
+           except Exception as e:
+                      print('Encountered a error: ', e)
+
 
 def put_in_doc_dir(file):
            pwd = get_current_working_directory()
            docFilePath = pwd / 'S-Docs'
 
-           if not os.path.exists(docFilePath):
-                      os.mkdir('S-Docs')
+           try:
+                      if not os.path.exists(docFilePath):
+                                 os.mkdir('S-Docs')
 
-           shutil.move(str(pwd / file), str(docFilePath))
+                      shutil.move(str(pwd / file), str(docFilePath))
+           except Exception as e:
+                      print('Encountered a error: ', e)
                       
 
 if __name__ == '__main__':
